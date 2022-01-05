@@ -42,9 +42,12 @@ jobs:
           target: "app"
 
       - name: extract directory
-        run: tar -xvf /home/ubuntu/app/compress.tar.gz
+        run: |
+        cd /home/ubuntu/app
+        tar -xvf compress.tar.gz
 
       - name: move directory
         run: | 
-          mv /home/ubuntu/app /home/ubuntu/ytarama
-          mv /home/ubuntu/ytarama /var/www
+        cd /home/ubuntu/app
+          mv dist ytarama
+          mv ytarama /var/www
