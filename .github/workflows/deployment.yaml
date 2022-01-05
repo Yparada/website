@@ -43,11 +43,11 @@ jobs:
 
       - name: extract directory
         run: |
-        cd /home/ubuntu/app
-        tar -xvf compress.tar.gz
+          cd /home/ubuntu/app
+          tar -xvf compress.tar.gz
 
       - name: move directory
         run: | 
-        cd /home/ubuntu/app
+          cd /home/ubuntu/app
           mv dist ytarama
           mv ytarama /var/www
