@@ -45,7 +45,7 @@ jobs:
           source: compress.tar.gz
           target: "app"
 
-  update front:
+  updateFront:
     runs-on: ubuntu-latest
     needs: push
     steps:
