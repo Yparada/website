@@ -55,6 +55,4 @@ jobs:
             cd app
             tar -xvf compress.tar.gz
             cd dist
-            mv website ytarama
-            sudo cp -r ytarama/ /var/www
-            rm -r /home/ubuntu/app/dist/
+            rsync -a ytarama/website /var/www/ytarama
