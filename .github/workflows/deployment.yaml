@@ -40,7 +40,6 @@ jobs:
           key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA  }}
           source: compress.tar.gz
           target: "app"
-        run: -xvf app/compress.tar.gz
 
       - name: extract directory
         if: success()
