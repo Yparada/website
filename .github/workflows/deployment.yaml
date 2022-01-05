@@ -46,5 +46,5 @@ jobs:
 
       - name: move directory
         run: | 
-          mv app/dist/website app/dist/ytarama
-          mv app/dist/ytarama /var/www
+          mv /home/ubuntu/app /home/ubuntu/ytarama
+          mv /home/ubuntu/ytarama /var/www
