@@ -42,7 +42,7 @@ jobs:
           target: "app"
 
       - name: extract directory
-        if success()
+        if: success()
         run: |
           echo $PWD
           cd /home/ubuntu/app
