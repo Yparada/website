@@ -26,6 +26,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: 'Wait for SSH'
         run: |
           while ! nc -w5 -z ${{ secrets.OCI_IP_TERCERA }} 22; do
