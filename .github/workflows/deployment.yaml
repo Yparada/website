@@ -5,7 +5,7 @@ on:
       - 'master'
 
 jobs:
-  buildPush:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,14 +21,13 @@ jobs:
 
       - name: Build
         run: npm run ng build --prod
-
+      
       - name: 'Wait for SSH'
         run: |
           while ! nc -w5 -z ${{ secrets.OCI_IP_TERCERA }} 22; do
                   sleep 5
                   echo "SSH not available..."
           done; echo "SSH ready!"
-
       - name: Compress directory
         run:  tar -czvf compress.tar.gz dist
 
@@ -40,11 +39,7 @@ jobs:
           key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA  }}
           source: compress.tar.gz
           target: "app"
-
-  updateFront:
-    runs-on: ubuntu-latest
-    needs: buildPush
-    steps:
+      
       - name: 'Extract directory and move'
         uses: appleboy/ssh-action@master
         with:
@@ -55,4 +50,6 @@ jobs:
             cd app
             tar -xvf compress.tar.gz
             cd dist
-            sudo rsync -a website /var/www/ytarama
+            mv website ytarama
+            sudo cp -r ytarama/ /var/www
+            rm -r /home/ubuntu/app/dist/
