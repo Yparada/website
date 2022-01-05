@@ -42,16 +42,15 @@ jobs:
           target: "app"
         run: -xvf app/compress.tar.gz
 
-  #    - name: extract directory
-  #      if: success()
-  #      run: |
-  #        echo $PWD
-  #        cd /home/ubuntu/app
-  #        tar -xvf compress.tar.gz
-
-      - name: move directory
+      - name: extract directory
         if: success()
-        run: | 
-          cd /home/ubuntu/app
-          mv dist ytarama
-          mv ytarama /var/www
+        run: |
+          echo $PWD
+
+
+      # - name: move directory
+      #   if: success()
+      #   run: | 
+      #     cd /home/ubuntu/app
+      #     mv dist ytarama
+      #     mv ytarama /var/www
