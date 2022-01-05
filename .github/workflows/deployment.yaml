@@ -21,7 +21,11 @@ jobs:
 
       - name: Build
         run: npm run ng build --prod
-      
+
+  push:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: 'Wait for SSH'
         run: |
           while ! nc -w5 -z ${{ secrets.OCI_IP_TERCERA }} 22; do
@@ -40,7 +44,11 @@ jobs:
           key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA  }}
           source: compress.tar.gz
           target: "app"
-      
+
+  update front:
+    runs-on: ubuntu-latest
+    needs: push
+    steps:
       - name: 'Extract directory and move'
         uses: appleboy/ssh-action@master
         with:
