@@ -49,7 +49,7 @@ jobs:
           tar -xvf compress.tar.gz
 
       - name: move directory
-        if success()
+        if: success()
         run: | 
           cd /home/ubuntu/app
           mv dist ytarama
