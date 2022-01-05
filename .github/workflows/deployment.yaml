@@ -40,16 +40,15 @@ jobs:
           key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA  }}
           source: compress.tar.gz
           target: "app"
-
-      - name: extract directory
-        if: success()
-        run: |
-          echo $PWD
-
-
-      # - name: move directory
-      #   if: success()
-      #   run: | 
-      #     cd /home/ubuntu/app
-      #     mv dist ytarama
-      #     mv ytarama /var/www
+      
+      - name: 'Extract directory and move'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.OCI_IP_TERCERA }}
+          username: ubuntu
+          key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA }}
+          script: |
+            tar -xvf /home/ubuntu/app/compress.tar.gz
+            cd dist
+            mv website ytarama
+            mv ytarama /var/www
