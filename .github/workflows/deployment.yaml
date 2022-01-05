@@ -51,4 +51,4 @@ jobs:
             tar -xvf /home/ubuntu/app/compress.tar.gz
             cd dist
             mv website ytarama
-            mv ytarama /var/www
+            mv ytarama /var/www/ytarama
