@@ -21,7 +21,7 @@ jobs:
 
       - name: Build
         run: npm run ng build --prod
-
+      
       - name: 'Wait for SSH'
         run: |
           while ! nc -w5 -z ${{ secrets.OCI_IP_TERCERA }} 22; do
