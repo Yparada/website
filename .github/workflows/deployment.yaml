@@ -43,7 +43,7 @@ jobs:
 
   updateFront:
     runs-on: ubuntu-latest
-    needs: push
+    needs: buildPush
     steps:
       - name: 'Extract directory and move'
         uses: appleboy/ssh-action@master
