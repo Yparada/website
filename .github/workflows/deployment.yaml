@@ -55,4 +55,4 @@ jobs:
             cd app
             tar -xvf compress.tar.gz
             cd dist
-            rsync -a ytarama/website /var/www/ytarama
+            rsync -a website /var/www/ytarama
