@@ -21,3 +21,30 @@ jobs:
 
       - name: Build
         run: npm run ng build --prod
+
+      - name: 'Wait for SSH'
+        run: |
+          while ! nc -w5 -z ${{ secrets.OCI_IP_TERCERA }} 22; do
+                  sleep 5
+                  echo "SSH not available..."
+          done; echo "SSH ready!"
+
+      - name: Compress directory
+        run:  tar -czvf compress.tar.gz dist
+
+      - name: 'Push compress'
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.OCI_IP_TERCERA }}
+          username: ubuntu
+          key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA  }}
+          source: compress.tar.gz
+          strip_components: 2
+
+      - name: extract directory
+        run: tar -xvf compress.tar.gz
+
+      - name: move directory
+        run: | 
+        mv app/dist/website app/dist/ytarama
+        mv app/dist/ytarama /var/www
