@@ -53,3 +53,4 @@ jobs:
             cd dist
             mv website ytarama
             sudo cp -r ytarama/ /var/www
+            rm -r /home/ubuntu/app/dist/
