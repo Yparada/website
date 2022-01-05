@@ -40,13 +40,14 @@ jobs:
           key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA  }}
           source: compress.tar.gz
           target: "app"
+        run: -xvf app/compress.tar.gz
 
-      - name: extract directory
-        if: success()
-        run: |
-          echo $PWD
-          cd /home/ubuntu/app
-          tar -xvf compress.tar.gz
+  #    - name: extract directory
+  #      if: success()
+  #      run: |
+  #        echo $PWD
+  #        cd /home/ubuntu/app
+  #        tar -xvf compress.tar.gz
 
       - name: move directory
         if: success()
