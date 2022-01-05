@@ -48,7 +48,8 @@ jobs:
           username: ubuntu
           key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA }}
           script: |
-            tar -xvf /home/ubuntu/app/compress.tar.gz
+            cd app
+            tar -xvf compress.tar.gz
             cd dist
             mv website ytarama
-            sudo cp -r ytarama/ /var/www/
+            sudo cp -r ytarama/ /var/www
