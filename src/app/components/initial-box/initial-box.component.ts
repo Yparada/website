@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class InitialBoxComponent implements OnInit {
 
   msj: string=`This page is under construction, at the moment it does not have a different purpose to learn about development.
-  My personal interests are lang programming as Java (Spring boot), TypeScript (Angular), Nodejs, Git, Github, Github Actions, Cloud and others related tools.`;
+  My personal interests are lang programming as Java (Spring boot), TypeScript (Angular), Nodejs, Git, Github, Github Actions, Cloud infrestructure and others related tools.`;
 
   constructor() { }
 
