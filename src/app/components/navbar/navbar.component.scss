@@ -1,14 +1,15 @@
 nav {
-  background: #c25569;
+  background: #2F2E41;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
-  height: 30px;
+  height: 40px;
 
 
   .container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 50px 0 50px;
+    margin: 0 100px 0 122px;
     height: 100%;
 
     .box {
@@ -22,7 +23,7 @@ nav {
         text-decoration: none;
         cursor: pointer;
 
-        margin-right: 21px;
+        margin-right: 22px;
 
         .iconNav {
           margin-right: 5px;
@@ -39,11 +40,10 @@ nav {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          color: white;
+          color: #FFFFFF;
           font-family: Roboto;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 13px;
+          font-weight: 500;
+          font-size: 14px;
           line-height: 16px;
         }
 
@@ -57,11 +57,12 @@ nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        color: #FFFFFF;
         font-family: Roboto;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 13px;
+        font-weight: 500;
+        font-size: 14px;
         line-height: 16px;
+
       }
 
     }
