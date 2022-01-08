@@ -15,12 +15,27 @@
     margin: 0 122px 0 122px;
 
     .msj{
-      margin: 10px;
       font-family: Roboto, sans-serif;
       font-style: normal;
       font-weight: 400;
       text-align: center;
 
+    }
+  }
+}
+
+@media (max-width: 770px){
+  .container{
+    .content{
+      margin: 0 50px 0 50px;
+    }
+  }
+}
+
+@media (max-width: 540px){
+  .container{
+    .content{
+      margin: 0 22px 0 22px;
     }
   }
 }
