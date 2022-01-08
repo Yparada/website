@@ -70,3 +70,11 @@ nav {
 
   }
 }
+
+@media (max-width: 540px){
+  nav{
+    .container{
+      margin: 0 0 0 22px;
+    }
+  }
+}
