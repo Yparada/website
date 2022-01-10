@@ -10,6 +10,7 @@ import { InitialBoxComponent } from './components/initial-box/initial-box.compon
 import { UtilsService } from './services/utils.service';
 import { MainComponent } from './components/main/main.component';
 import { IssuesComponent } from './components/issues/issues.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { IssuesComponent } from './components/issues/issues.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [UtilsService],
   bootstrap: [AppComponent]

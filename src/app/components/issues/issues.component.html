@@ -3,32 +3,28 @@
     <div class="dasboard-title">Dashboard</div>
 
     <div class="task-container-elements">
-      <div  >
+      <div  *ngFor="let task of datos">
         <div class="task">
           <div class="task-container">
             <div class="state-container">
-              <div class="state">Sin iniciar</div>
+              <div class="state" [ngClass]=
+              "{'without-state': task.state.name == 'Sin iniciar', 'development': task.state.name == 'En desarrollo', 'test': task.state.name == 'En pruebas', 'finished': task.state.name == 'Finalizado'}">
+              {{task.state.name}}</div>
             </div>
             <div class="container-atribute">
               <div class="atribute">Id</div>
-              <div class="atribute-value">13</div>
+              <div class="atribute-value">{{task.id}}</div>
             </div>
             <div class="container-atribute">
               <div class="atribute">Title:</div>
-              <div class="atribute-value">Corregir metodo task/updateTask</div>
+              <div class="atribute-value">{{task.title}}</div>
             </div>
 
             <div class="container-atribute">
               <div class="atribute">Description:</div>
             </div>
 
-            <div class="description">
-              Al momento de hacer una actualización es necesario agregar el campo
-              description en el state, con el id debería ser suficiente. Al
-              momento de hacer una actualización es necesario agregar el campo
-              description en el state, con el id debería ser suficiente cjfjfj
-              jfksicuehkd jdjd jdjdjd jdjdjd
-            </div>
+            <div class="description">{{task.description}}</div>
           </div>
         </div>
       </div>
