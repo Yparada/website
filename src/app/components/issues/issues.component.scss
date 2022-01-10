@@ -1,0 +1,107 @@
+.dashboard{
+  background: #2F2E41;
+  border-radius: 16px;
+  margin: 48px 122px 48px 122px;
+
+  .container{
+    padding: 40px 39px 94px 39px;
+
+    .dasboard-title{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      color: #FFFFFF;
+      margin-bottom: 33px;
+    }
+
+    .task-container-elements{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 7px;
+
+      .task{
+        max-width: 483px;
+        background: #B790D5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+
+        .task-container{
+          padding: 29px 33px 27px 33px;
+
+          .state-container{
+            display: flex;
+            flex-direction: row;
+            justify-content:flex-end;
+
+            .state{
+              border: 2px solid #000000;
+              box-sizing: border-box;
+              border-radius: 19px;
+              padding: 2px 9px 2px 9px;
+              margin-bottom: 9px;
+
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 11px;
+              line-height: 13px;
+              color: #000000;
+            }
+          }
+
+          .container-atribute{
+            display: flex;
+            margin-bottom: 15px;
+            .atribute{
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 16px;
+              color: #2F2E41;
+            }
+            .atribute-value{
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 14px;
+              line-height: 16px;
+              color: #2F2E41;
+              margin-left: 15px;
+            }
+          }
+          .description{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            color: #2F2E41;
+
+            background: #C7ABDC;
+            border-radius: 17px;
+            padding: 10px;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 770px){
+
+  .dashboard{
+    margin: 48px 50px 0 50px;
+  }
+}
+
+@media (max-width: 540px){
+
+  .dashboard{
+    margin: 48px 22px 48px 22px;
+  }
+}
