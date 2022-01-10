@@ -1,0 +1,37 @@
+<div class="dashboard">
+  <div class="container">
+    <div class="dasboard-title">Dashboard</div>
+
+    <div class="task-container-elements">
+      <div  *ngFor="let task of datos">
+        <div class="task">
+          <div class="task-container">
+            <div class="state-container">
+              <div class="state" [ngClass]=
+              "{'without-state': task.state.name == 'Sin iniciar', 'development': task.state.name == 'En desarrollo', 'test': task.state.name == 'En pruebas', 'finished': task.state.name == 'Finalizado'}">
+              {{task.state.name}}</div>
+            </div>
+            <div class="container-atribute">
+              <div class="atribute">Id</div>
+              <div class="atribute-value">{{task.id}}</div>
+            </div>
+            <div class="container-atribute">
+              <div class="atribute">Title:</div>
+              <div class="atribute-value">{{task.title}}</div>
+            </div>
+
+            <div class="container-atribute">
+              <div class="atribute">Description:</div>
+            </div>
+
+            <div class="description">{{task.description}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>

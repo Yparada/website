@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { InitialBoxComponent } from './components/initial-box/initial-box.component';
 import { UtilsService } from './services/utils.service';
 import { MainComponent } from './components/main/main.component';
+import { IssuesComponent } from './components/issues/issues.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { MainComponent } from './components/main/main.component';
     BannerComponent,
     FooterComponent,
     InitialBoxComponent,
-    MainComponent
+    MainComponent,
+    IssuesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [UtilsService],
   bootstrap: [AppComponent]

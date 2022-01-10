@@ -1,0 +1,148 @@
+.dashboard{
+  background: #2F2E41;
+  border-radius: 16px;
+  margin: 48px 122px 48px 122px;
+
+  .container{
+    padding: 40px 39px 94px 39px;
+
+    .dasboard-title{
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 21px;
+      color: #FFFFFF;
+      margin-bottom: 33px;
+    }
+
+    .task-container-elements{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items:center;
+      margin-left: 7px;
+
+      .task{
+        max-width: 483px;
+        background: #B790D5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+
+        .task-container{
+          padding: 29px 33px 27px 33px;
+
+          .state-container{
+            display: flex;
+            flex-direction: row;
+            justify-content:flex-end;
+
+            .state{
+              box-sizing: border-box;
+              border-radius: 19px;
+              padding: 2px 9px 2px 9px;
+              margin-bottom: 9px;
+
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 11px;
+              line-height: 13px;
+            }
+
+            .without-state{
+              border: 2px solid #000000;
+              color: #000000;
+            }
+
+            .development{
+              border: 2px solid #5BFC9B;
+              color: #5BFC9B;
+            }
+
+            .test{
+              border: 2px solid #3076B7;
+              color: #1F4C82;
+            }
+            .finished{
+              text-decoration-line: line-through;
+              border: 2px solid #FFFFFF;
+              color: #FFFFFF;
+            }
+          }
+
+          .container-atribute{
+            display: flex;
+            margin-bottom: 15px;
+            .atribute{
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 16px;
+              color: #2F2E41;
+            }
+            .atribute-value{
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 14px;
+              line-height: 16px;
+              color: #2F2E41;
+              margin-left: 15px;
+            }
+          }
+          .description{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            color: #2F2E41;
+
+            background: #C7ABDC;
+            border-radius: 17px;
+            padding: 10px;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (max-width: 770px){
+
+  .dashboard{
+    margin: 48px 50px 0 50px;
+
+    .container{
+      .task-container-elements{
+        align-items: stretch;
+        align-content: center;
+        flex-direction: column;
+
+      }
+    }
+
+  }
+}
+
+@media (max-width: 540px){
+
+  .dashboard{
+    margin: 48px 22px 48px 22px;
+
+    .container{
+      .task-container-elements{
+        align-items: stretch;
+        align-content: center;
+        flex-direction: column;
+
+      }
+    }
+  }
+}
