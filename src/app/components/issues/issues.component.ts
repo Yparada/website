@@ -7,7 +7,7 @@ import { TaskService } from 'src/app/services/task.service';
   styleUrls: ['./issues.component.scss']
 })
 export class IssuesComponent implements OnInit {
-  datos: any[] = []; 
+  datos: any[] = [];
 
   constructor(private taskService: TaskService) { }
 
@@ -18,7 +18,6 @@ export class IssuesComponent implements OnInit {
   loanTaskList(){
     this.taskService.getAllTask().subscribe( resp => {
       this.datos = resp;
-      console.log(resp);
     })
   }
 
