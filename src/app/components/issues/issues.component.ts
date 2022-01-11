@@ -7,14 +7,12 @@ import { TaskService } from 'src/app/services/task.service';
   styleUrls: ['./issues.component.scss']
 })
 export class IssuesComponent implements OnInit {
-  datos: any[] = [];
-  valor: boolean;
+  datos: any[] = []; 
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
     this.loanTaskList();
-    this.valor = true;
   }
 
   loanTaskList(){
