@@ -8,7 +8,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InitialBoxComponent } from './components/initial-box/initial-box.component';
 import { UtilsService } from './services/utils.service';
-import { MainComponent } from './components/main/main.component';
+import { MainComponent } from './screens/main/main.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { HttpClientModule } from '@angular/common/http';
 

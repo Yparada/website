@@ -29,7 +29,7 @@
         min-width: 460px;
         background: #B790D5;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
+        border-radius: 7px;
         margin-right: 20px;
         margin-bottom: 20px;
 
@@ -77,14 +77,14 @@
 
           .container-atribute{
             display: flex;
-            margin-bottom: 15px;
+            margin-bottom: 6px;
             .atribute{
               font-family: Roboto;
               font-style: normal;
               font-weight: 500;
               font-size: 14px;
               line-height: 16px;
-              color: #2F2E41;
+              color: #000000;
             }
             .atribute-value{
               font-family: Roboto;
@@ -92,8 +92,8 @@
               font-weight: normal;
               font-size: 14px;
               line-height: 16px;
-              color: #2F2E41;
-              margin-left: 15px;
+              color: #000000;
+              margin-left: 5px;
             }
           }
           .description{
@@ -102,10 +102,10 @@
             font-weight: normal;
             font-size: 14px;
             line-height: 16px;
-            color: #2F2E41;
-
-            background: #C7ABDC;
-            border-radius: 17px;
+            color: #000000;
+            border: 1px solid #1F4C82;
+            background: #5F7DAF;
+            border-radius: 7px;
             padding: 10px;
           }
         }
@@ -119,7 +119,7 @@
 
   .dashboard{
     .container{
-      
+
       .task-container-elements{
         align-items: stretch;
         align-content: center;

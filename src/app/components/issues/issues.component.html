@@ -8,11 +8,11 @@
           <div class="task-container">
             <div class="state-container">
               <div class="state" [ngClass]=
-              "{'without-state': task.state.name == 'Sin iniciar', 'development': task.state.name == 'En desarrollo', 'test': task.state.name == 'En pruebas', 'finished': task.state.name == 'Finalizado'}">
+              "{'without-state': task.state.name == 'To Do', 'development': task.state.name == 'Developing', 'test': task.state.name == 'Testing', 'finished': task.state.name == 'Done'}">
               {{task.state.name}}</div>
             </div>
             <div class="container-atribute">
-              <div class="atribute">Id</div>
+              <div class="atribute">Id:</div>
               <div class="atribute-value">{{task.id}}</div>
             </div>
             <div class="container-atribute">
@@ -21,7 +21,7 @@
             </div>
 
             <div class="container-atribute">
-              <div class="atribute">Description:</div>
+              <div class="atribute">Description</div>
             </div>
 
             <div class="description">{{task.description}}</div>
