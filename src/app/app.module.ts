@@ -11,6 +11,7 @@ import { UtilsService } from './services/utils.service';
 import { MainComponent } from './screens/main/main.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './screens/login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     InitialBoxComponent,
     MainComponent,
-    IssuesComponent
+    IssuesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
