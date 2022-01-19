@@ -17,11 +17,13 @@ jobs:
           node-version: '12.x'
 
       - name: Install dependencies
-        run: npm i
+        run: |
+        npm install -g @angular/cli
+        npm i
 
       - name: Build
-        run: npm run ng build --prod
-      
+        run: ng build --prod
+
       - name: 'Wait for SSH'
         run: |
           while ! nc -w5 -z ${{ secrets.OCI_IP_TERCERA }} 22; do
@@ -39,7 +41,7 @@ jobs:
           key: ${{ secrets.VM_SSH_PRIVATE_KEY_TERCERA  }}
           source: compress.tar.gz
           target: "app"
-      
+
       - name: 'Extract directory and move'
         uses: appleboy/ssh-action@master
         with:
