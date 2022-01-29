@@ -11,7 +11,9 @@ import { UtilsService } from './services/utils.service';
 import { MainComponent } from './screens/main/main.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './screens/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistryComponent } from './auth/registry/registry.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { LoginComponent } from './screens/login/login.component';
     InitialBoxComponent,
     MainComponent,
     IssuesComponent,
-    LoginComponent
+    LoginComponent,
+    RegistryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [UtilsService],
   bootstrap: [AppComponent]

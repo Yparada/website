@@ -9,9 +9,9 @@ export class TaskService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private API_SERVER= 'https://api.ytarama.com/task/';
+  private API_SERVER= 'https://api.ytarama.com/';
 
   public getAllTask(): Observable<any>{
-    return this.httpClient.get(this.API_SERVER+'getAllTask');
+    return this.httpClient.get(this.API_SERVER+'task/getAllTask');
   }
 }
