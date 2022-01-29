@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistryComponent } from './auth/registry/registry.component';
 import { FormsModule } from '@angular/forms';
+import { DevComponent } from './screens/dev/dev.component';
+import { interceptorProvider } from './interceptors/task-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     MainComponent,
     IssuesComponent,
     LoginComponent,
-    RegistryComponent
+    RegistryComponent,
+    DevComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UtilsService],
+  providers: [UtilsService, interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
