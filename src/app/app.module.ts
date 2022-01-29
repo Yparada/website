@@ -11,7 +11,11 @@ import { UtilsService } from './services/utils.service';
 import { MainComponent } from './screens/main/main.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './screens/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistryComponent } from './auth/registry/registry.component';
+import { FormsModule } from '@angular/forms';
+import { DevComponent } from './screens/dev/dev.component';
+import { interceptorProvider } from './interceptors/task-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -22,15 +26,18 @@ import { LoginComponent } from './screens/login/login.component';
     InitialBoxComponent,
     MainComponent,
     IssuesComponent,
-    LoginComponent
+    LoginComponent,
+    RegistryComponent,
+    DevComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [UtilsService],
+  providers: [UtilsService, interceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
