@@ -3,12 +3,8 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MainModalComponent } from 'src/app/modal-global/main-modal/main-modal.component';
-
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
+import { MainModalService } from 'src/app/modal-global/services/main-modal.service';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +26,7 @@ export class LoginComponent implements OnInit {
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router,
-    public dialog: MatDialog) { }
+    private mainModalService: MainModalService) { }
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
@@ -41,7 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void{
-    this.openDialog();
+    this.mainModalService.loading();
     this.loginUser = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUser).subscribe( data => {
       this.isLogged = true;
@@ -51,23 +47,17 @@ export class LoginComponent implements OnInit {
       this.tokenService.setUserName(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
-      this.dialog.closeAll();
+      this.mainModalService.closeAll();
       this.router.navigate(['/dev']);
     },
     err => {
       this.isLogged = false;
       this.isLoginFail = true;
+      this.mainModalService.closeAll();
       console.log(err);
-      this.dialog.closeAll();
     }
 
     );
-  }
-
-  openDialog() {
-    this.dialog.open(MainModalComponent ,{
-      disableClose: true,
-    });
   }
 
 }
