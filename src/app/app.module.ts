@@ -16,6 +16,9 @@ import { RegistryComponent } from './auth/registry/registry.component';
 import { FormsModule } from '@angular/forms';
 import { DevComponent } from './screens/dev/dev.component';
 import { interceptorProvider } from './interceptors/task-interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainModalComponent } from './modal-global/main-modal/main-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -28,14 +31,17 @@ import { interceptorProvider } from './interceptors/task-interceptor.service';
     IssuesComponent,
     LoginComponent,
     RegistryComponent,
-    DevComponent
+    DevComponent,
+    MainModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [UtilsService, interceptorProvider],
   bootstrap: [AppComponent]

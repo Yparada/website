@@ -3,6 +3,12 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MainModalComponent } from 'src/app/modal-global/main-modal/main-modal.component';
+
+export interface DialogData {
+  animal: 'panda' | 'unicorn' | 'lion';
+}
 
 @Component({
   selector: 'app-login',
@@ -23,7 +29,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     if(this.tokenService.getToken()){
@@ -34,8 +41,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void{
-    console.log('name :'+this.nombreUsuario);
-    console.log('password :'+this.password);
+    this.openDialog();
     this.loginUser = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUser).subscribe( data => {
       this.isLogged = true;
@@ -45,21 +51,23 @@ export class LoginComponent implements OnInit {
       this.tokenService.setUserName(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
+      this.dialog.closeAll();
       this.router.navigate(['/dev']);
     },
     err => {
       this.isLogged = false;
       this.isLoginFail = true;
-      //this.errorMsj = err.error.message;
       console.log(err);
+      this.dialog.closeAll();
     }
 
     );
   }
 
-  onClick(){
-    console.log('name :'+this.nombreUsuario);
-    console.log('password :'+this.password);
+  openDialog() {
+    this.dialog.open(MainModalComponent ,{
+      disableClose: true,
+    });
   }
 
 }
