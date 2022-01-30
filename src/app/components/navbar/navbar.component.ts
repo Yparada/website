@@ -30,7 +30,13 @@ export class NavbarComponent implements OnInit {
 
   onLogOut(){
     this.tokenSevice.logOut();
-    this.router.navigate(['/']);
+
+    if(this.router.url == '/dev'){
+      this.router.navigate(['/']);
+    }
+    else{
+      location.reload();
+    }
 
   }
 
