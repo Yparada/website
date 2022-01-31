@@ -36,7 +36,11 @@ export class IssuesComponent implements OnInit {
         this.StateList = resp;
         this.mainModalService.closeAll();
         this.mainModalService.openTask(elemento, this.StateList);
-      })
+      },
+      error => {
+        this.mainModalService.closeAll();
+      }
+      )
     }
     else{
       this.mainModalService.openTask(elemento, this.StateList);

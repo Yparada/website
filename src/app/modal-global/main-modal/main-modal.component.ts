@@ -14,19 +14,30 @@ export class MainModalComponent implements OnInit {
   id: number;
   title: string;
   desc: string;
+  stateSelected: any;
   state: any;
   idState: number;
   nameState: string;
 
   ngOnInit(): void {
-    let dato = JSON.stringify(this.data.task);
+    let task = JSON.stringify(this.data.task);
+    let state = JSON.stringify(this.data.state);
     try{
-      let desc = JSON.parse(dato)['description'];
-      let title = JSON.parse(dato)['title'];
-      let id = JSON.parse(dato)['id'];
+      let desc = JSON.parse(task)['description'];
+      let title = JSON.parse(task)['title'];
+      let id = JSON.parse(task)['id'];
+      let stateSelected = JSON.parse(task)['state'];
+      let idState = JSON.parse(task)['state']['id'];
+      let nameState = JSON.parse(task)['state']['name'];
       this.desc = desc;
       this.title = title;
       this.id = id;
+      this.stateSelected = stateSelected;
+      this.idState = idState;
+      this.nameState = nameState;
+
+      this.state = JSON.parse(state);
+
     }
     catch{
 

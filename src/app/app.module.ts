@@ -21,6 +21,7 @@ import { MainModalComponent } from './modal-global/main-modal/main-modal.compone
 import { MatDialogModule } from '@angular/material/dialog';
 import { InputComponent } from './components/input/input.component';
 import { TextAreaComponent } from './components/text-area/text-area.component';
+import { DropDownListComponent } from './components/drop-down-list/drop-down-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TextAreaComponent } from './components/text-area/text-area.component';
     DevComponent,
     MainModalComponent,
     InputComponent,
-    TextAreaComponent
+    TextAreaComponent,
+    DropDownListComponent
   ],
   imports: [
     BrowserModule,

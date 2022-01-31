@@ -1,0 +1,17 @@
+<!-- <select class="box">
+  <option class="options" *ngFor="let element of list" value={{element.id}}>{{element.name}}</option>
+</select>
+ -->
+
+<div class="principal" (click)="onOpenList()">
+  {{ placeholdertext }}
+  <span class="material-icons" *ngIf="!isOpenList"> arrow_drop_down </span>
+  <span class="material-icons" *ngIf="isOpenList"> arrow_drop_up </span>
+</div>
+<div class="content" *ngIf="isOpenList">
+  <div class="element-list" *ngFor="let element of list" >
+    <div class="element" (click)="onSelectElement(element.id, element.name)">
+      {{ element.name }}
+    </div>
+  </div>
+</div>
