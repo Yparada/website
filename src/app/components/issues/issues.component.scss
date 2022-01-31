@@ -39,7 +39,21 @@
           .state-container{
             display: flex;
             flex-direction: row;
-            justify-content:flex-end;
+            justify-content: space-between;
+
+            .icons{
+              .material-icons{
+                cursor: pointer;
+              }
+
+              .material-icons.delete{
+                color: #af1d1d;
+              }
+
+              .material-icons.edit{
+                color: #1a2d9b;
+              }
+            }
 
             .state{
               box-sizing: border-box;

@@ -1,0 +1,21 @@
+.input-component{
+  background: rgba(196, 196, 196, 0.29);
+  border: 1px solid #2F2E41;
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 10px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+
+  &:focus{
+    background-color: #ffffff;
+    outline: #0041a8;
+    border: solid 1px #0041a8;
+  }
+}

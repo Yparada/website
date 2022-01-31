@@ -3,35 +3,43 @@
     <div class="dasboard-title">Dashboard</div>
 
     <div class="task-container-elements">
-      <div  *ngFor="let task of datos">
+      <div *ngFor="let task of datos">
         <div class="task">
           <div class="task-container">
             <div class="state-container">
-              <div class="state" [ngClass]=
-              "{'without-state': task.state.name == 'To Do', 'development': task.state.name == 'Developing', 'test': task.state.name == 'Testing', 'finished': task.state.name == 'Done'}">
-              {{task.state.name}}</div>
+              <div class="icons">
+                <span class="material-icons delete" (click)="onDelete(task.id)"> highlight_off</span>
+                <span class="material-icons edit" (click)="onClick(task)"> edit </span>
+              </div>
+              <div
+                class="state"
+                [ngClass]="{
+                  'without-state': task.state.name == 'To Do',
+                  development: task.state.name == 'Developing',
+                  test: task.state.name == 'Testing',
+                  finished: task.state.name == 'Done'
+                }"
+              >
+                {{ task.state.name }}
+              </div>
             </div>
             <div class="container-atribute">
               <div class="atribute">Id:</div>
-              <div class="atribute-value">{{task.id}}</div>
+              <div class="atribute-value">{{ task.id }}</div>
             </div>
             <div class="container-atribute">
               <div class="atribute">Title:</div>
-              <div class="atribute-value">{{task.title}}</div>
+              <div class="atribute-value">{{ task.title }}</div>
             </div>
 
             <div class="container-atribute">
               <div class="atribute">Description</div>
             </div>
 
-            <div class="description">{{task.description}}</div>
+            <div class="description">{{ task.description }}</div>
           </div>
         </div>
       </div>
     </div>
-
-
-
-
   </div>
 </div>

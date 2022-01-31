@@ -15,4 +15,9 @@ export class TaskService {
   public getAllTask(): Observable<any>{
     return this.httpClient.get(this.API_SERVER+'/task/getAllTask');
   }
+
+  public deleteTask(id: number): Observable<any>{
+    return this.httpClient.delete(this.API_SERVER + '/task/deleteTask/'+id);
+  }
+  
 }

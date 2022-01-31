@@ -54,3 +54,13 @@
     transform: scale(1.0);
   }
 }
+
+.task-container{
+  width: 500px;
+
+  .container-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}

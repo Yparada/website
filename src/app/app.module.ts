@@ -19,6 +19,9 @@ import { interceptorProvider } from './interceptors/task-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainModalComponent } from './modal-global/main-modal/main-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { InputComponent } from './components/input/input.component';
+import { TextAreaComponent } from './components/text-area/text-area.component';
+import { DropDownListComponent } from './components/drop-down-list/drop-down-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     RegistryComponent,
     DevComponent,
-    MainModalComponent
+    MainModalComponent,
+    InputComponent,
+    TextAreaComponent,
+    DropDownListComponent
   ],
   imports: [
     BrowserModule,
