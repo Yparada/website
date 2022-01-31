@@ -4,7 +4,8 @@ import { MainModalComponent } from '../main-modal/main-modal.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface DialogData {
-  tipo: 'loading';
+  tipo: 'loading' | 'task',
+  task: '',
 }
 
 @Injectable({
@@ -14,7 +15,7 @@ export class MainModalService {
   loadingReturn: any;
 
   constructor(
-    public dialog: MatDialog) { }
+    private dialog: MatDialog) { }
 
     loading(){
       this.loadingReturn = this.dialog.open(MainModalComponent, {
@@ -23,6 +24,16 @@ export class MainModalService {
           tipo: 'loading'
         }
       });
+    }
+
+    openTask(item: any, states: any){
+      this.dialog.open(MainModalComponent, {
+        data: {
+          tipo: 'task',
+          task: item,
+          state: states
+        }
+      })
     }
 
     closeAll(){

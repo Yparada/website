@@ -3,12 +3,21 @@
   <img src="../../../assets/loading.gif" class="loading">
 </div> -->
 
+<div class="sk-chase" *ngIf="data.tipo == 'loading'">
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+  <div class="sk-chase-dot"></div>
+</div>
 
-<div class="sk-chase" *ngIf="data.tipo == 'loading' ">
-  <div class="sk-chase-dot"></div>
-  <div class="sk-chase-dot"></div>
-  <div class="sk-chase-dot"></div>
-  <div class="sk-chase-dot"></div>
-  <div class="sk-chase-dot"></div>
-  <div class="sk-chase-dot"></div>
+<div *ngIf="data.tipo == 'task'">
+  <div class="task-container">
+    Id: {{id}}
+    <div>Title</div>
+    <app-input [placeholdertext]="'Title'" [inputValue]=title></app-input>
+    <div>Description</div>
+    <app-text-area [placeholdertext]="'Description'" [inputValue]=desc></app-text-area>
+  </div>
 </div>
