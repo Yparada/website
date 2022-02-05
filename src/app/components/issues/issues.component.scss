@@ -6,15 +6,27 @@
   .container{
     padding: 40px 19px 94px 39px;
 
-    .dasboard-title{
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 21px;
-      color: #FFFFFF;
+    .dasboard-title-container{
+      display: flex;
       margin-bottom: 33px;
+      align-items: center;
+
+      .dasboard-title{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        color: #FFFFFF;
+      }
+
+      .task-img-container{
+        cursor: pointer;
+        margin-left: 3px;
+      }
+
     }
+
 
     .task-container-elements{
       display: flex;
