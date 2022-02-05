@@ -50,8 +50,9 @@ export class IssuesComponent implements OnInit {
 
   onDelete(id: number){
     this.taskService.deleteTask(id).subscribe( resp => {
-
     });
+    this.datos = [];
+    this.loanTaskList();
     // location.reload();
 
   }
