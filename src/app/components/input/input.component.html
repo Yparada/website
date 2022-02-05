@@ -5,5 +5,6 @@
   placeholder={{placeholdertext}}
   class="input-component"
   [(ngModel)]="inputValue"
+  (ngModelChange)="onChange()"
   required
 />

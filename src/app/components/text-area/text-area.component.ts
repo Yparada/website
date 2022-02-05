@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-text-area',
@@ -8,10 +8,17 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TextAreaComponent implements OnInit {
   @Input() placeholdertext: string;
   @Input() inputValue: any;
+  @Output() outputValue: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.outputValue.emit(this.inputValue);
+  }
+
+  onChange(){
+    console.log('Valor textArea '+this.inputValue);
+    this.outputValue.emit(this.inputValue);
   }
 
 }

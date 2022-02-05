@@ -22,6 +22,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { InputComponent } from './components/input/input.component';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 import { DropDownListComponent } from './components/drop-down-list/drop-down-list.component';
+import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { DropDownListComponent } from './components/drop-down-list/drop-down-lis
     MainModalComponent,
     InputComponent,
     TextAreaComponent,
-    DropDownListComponent
+    DropDownListComponent,
+    ButtonPrimaryComponent
   ],
   imports: [
     BrowserModule,

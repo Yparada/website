@@ -56,12 +56,51 @@
 }
 
 .task-container{
-  max-width: 460px;
-  min-width: 460px;
-  
-  .container-button{
+  max-width: 259px;
+  min-width: 259px;
+
+  .title{
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    font-family: Roboto-medium;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #1F4C82;
   }
+
+  .task-id{
+    font-family: Roboto-medium;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1F4C82;
+    margin-top: 16px;
+  }
+
+  .sub-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1F4C82;
+    margin-top: 11px;
+    margin-bottom: 1px;
+  }
+
+  .state-list{
+    width: 130px;
+  }
+
+  .modify-box-button{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+
+    .modify-button{
+      width: 123px;
+    }
+  }
+
 }

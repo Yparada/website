@@ -18,6 +18,7 @@ export class DropDownListComponent implements OnInit {
   ngOnInit(): void {
     if(this.initialData){
       this.placeholdertext = this.initialData['name'];
+      this.itemSelected.emit({id: this.initialData['id'], name: this.initialData['name']});
     }
   }
 
