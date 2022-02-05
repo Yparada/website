@@ -14,12 +14,21 @@
 
 <div *ngIf="data.tipo == 'task'">
   <div class="task-container">
-    Id: {{id}}
-    <div>Title</div>
-    <app-input [placeholdertext]="'Title'" [inputValue]=title></app-input>
-    <div>Description</div>
-    <app-text-area [placeholdertext]="'Description'" [inputValue]=desc></app-text-area>
-    <div>State</div>
-    <app-drop-down-list [placeholdertext]="'Selecionar'" [initialData]="stateSelected" [list]="state"></app-drop-down-list>
+    <div class="title">Task editing mode</div>
+    <div class="task-id">Identifier: {{id}}</div>
+    <div class="sub-title">State</div>
+    <div class="state-list">
+      <app-drop-down-list [placeholdertext]="'Selecionar'" [initialData]="stateSelected" [list]="state"
+      (itemSelected)="itemSelect($event)"></app-drop-down-list>
+    </div>
+    <div class="sub-title">Title</div>
+    <app-input [placeholdertext]="'Title'" [inputValue]=title (outputValue)="titleSelect($event)"></app-input>
+    <div class="sub-title">Description</div>
+    <app-text-area [placeholdertext]="'Description'" [inputValue]=desc (outputValue)="descSelect($event)"></app-text-area>
+    <div class="modify-box-button">
+      <div class="modify-button">
+        <app-button-primary [text]="'Modify'" (click)="onClick($event)"></app-button-primary> 
+      </div>
+    </div>
   </div>
 </div>

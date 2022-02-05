@@ -15,9 +15,12 @@ export class MainModalComponent implements OnInit {
   title: string;
   desc: string;
   stateSelected: any;
+  titleTask: string;
+  descTask: string;
   state: any;
   idState: number;
   nameState: string;
+  stateTask: any;
 
   ngOnInit(): void {
     let task = JSON.stringify(this.data.task);
@@ -35,7 +38,8 @@ export class MainModalComponent implements OnInit {
       this.stateSelected = stateSelected;
       this.idState = idState;
       this.nameState = nameState;
-
+      this.titleTask = '';
+      this.descTask = '';
       this.state = JSON.parse(state);
 
     }
@@ -47,6 +51,27 @@ export class MainModalComponent implements OnInit {
 
   modify(){
 
+  }
+
+  itemSelect(item: any){
+    this.stateTask = item;
+  }
+
+  titleSelect(title: string){
+    this.titleTask = title;
+  }
+
+  descSelect(desc: string){
+    this.descTask = desc;
+  }
+
+  onClick(num: number){
+    console.log('-------- Datos a enviar -------');
+    console.log('Id '+this.id);
+    let e = JSON.stringify(this.stateTask)
+    console.log('State '+e);
+    console.log('Title '+this.titleTask);
+    console.log('Desc '+this.descTask);
   }
 
 }
