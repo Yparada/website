@@ -8,8 +8,8 @@
           <div class="task-container">
             <div class="state-container">
               <div class="icons">
-                <span class="material-icons delete" (click)="onDelete(task.id)"> highlight_off</span>
-                <span class="material-icons edit" (click)="onClick(task)"> edit </span>
+                <img src="../../../assets/cancelCircle.svg" class="task-icons" (click)="onDelete(task.id)" alt="Delete">
+                <img src="../../../assets/buildCirlcle.svg" class="task-icons" (click)="onClick(task)" alt="Edit">
               </div>
               <div
                 class="state"
