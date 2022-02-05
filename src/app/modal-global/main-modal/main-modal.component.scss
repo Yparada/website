@@ -56,8 +56,9 @@
 }
 
 .task-container{
-  width: 500px;
-
+  max-width: 460px;
+  min-width: 460px;
+  
   .container-button{
     display: flex;
     justify-content: center;

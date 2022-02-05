@@ -1,56 +1,64 @@
-.principal{
-  background: #ffff;
-  border: 1px solid #2F2E41;
-  box-sizing: border-box;
-  border-radius: 12px;
-  width: 100%;
-  padding: 0 10px 0 10px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: -1px;
-  cursor: pointer;
-  color: black;
+.principal-container{
+  height: 42px;
+  .principal{
+    background: #ffff;
+    border: 1px solid #2F2E41;
+    box-sizing: border-box;
+    border-radius: 12px;
+    width: 100%;
+    padding: 0 10px 0 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: black;
 
-  &:focus{
+    &:focus{
+      background-color: #ffffff;
+      outline: #0041a8;
+      border: solid 1px #0041a8;
+    }
+
+    .material-icons{
+      color: darkblue;
+      font-size: 36px;
+    }
+  }
+
+  .principal:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+  }
+
+  .content{
+    width: calc(100% - 8px);
+    box-sizing: border-box;
+    margin-left: 4px;
+    margin-top: 2px;
+    border-radius: 6px;
+    border: 1px solid #2F2E41;
+    box-shadow: 0 4px 8px 0 rgb(196 212 227 / 60%);
     background-color: #ffffff;
-    outline: #0041a8;
-    border: solid 1px #0041a8;
-  }
+    position: relative;
+    padding: 8px 0 8px 0;
 
-  .material-icons{
-    color: darkblue;
-    font-size: 36px;
-  }
-}
+    .element-list{
+      .element{
+        cursor: pointer;
+        padding: 5px;
 
-.principal:focus {
-  border-color: #aaa;
-  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-  box-shadow: 0 0 0 3px -moz-mac-focusring;
-  color: #222;
-  outline: none;
-}
-
-.content{
-  width: calc(100% - 8px);
-  border: 1px solid #2F2E41;
-  box-sizing: border-box;
-  margin-left: 4px;
-  border-radius: 4px;
-
-  .element-list{
-    .element{
-      cursor: pointer;
-      padding: 5px;
-
-      &:hover{
-        background-color: darkturquoise;
+        &:hover{
+          background-color: darkturquoise;
+          border-radius: 6px;
+        }
       }
     }
   }
