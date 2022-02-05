@@ -42,16 +42,9 @@
             justify-content: space-between;
 
             .icons{
-              .material-icons{
+              .task-icons{
                 cursor: pointer;
-              }
-
-              .material-icons.delete{
-                color: #af1d1d;
-              }
-
-              .material-icons.edit{
-                color: #1a2d9b;
+                margin-right: 4px;
               }
             }
 
