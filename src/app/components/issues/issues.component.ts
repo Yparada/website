@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MainModalService } from 'src/app/modal-global/services/main-modal.service';
 import { StateService } from 'src/app/services/state.service';
 import { TaskService } from 'src/app/services/task.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-issues',
@@ -11,16 +12,25 @@ import { TaskService } from 'src/app/services/task.service';
 export class IssuesComponent implements OnInit {
   datos: any[] = [];
   StateList: any[] = [];
+  roles: string[];
+  isAdmin = false;
 
   constructor(
     private taskService: TaskService,
     private mainModalService: MainModalService,
-    private stateService: StateService) { }
+    private stateService: StateService,
+    private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.mainModalService.loading();
     this.loanTaskList();
     this.mainModalService.closeAll();
+    this.roles = this.tokenService.gerAuthorities();
+    this.roles.forEach( rol => {
+      if(rol === 'ROLE_ADMIN'){
+        this.isAdmin = true;
+      }
+    })
   }
 
   loanTaskList(){
