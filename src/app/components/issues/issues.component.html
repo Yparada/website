@@ -2,7 +2,7 @@
   <div class="container">
     <div class="dasboard-title-container">
       <div class="dasboard-title">Dashboard</div>
-      <div class="task-img-container">
+      <div class="task-img-container" (click)="onCreate()">
         <img src="../../../assets/addTask.svg" alt="Add task" title="Add task">
       </div>
     </div>
@@ -14,7 +14,7 @@
             <div class="state-container">
               <div class="icons">
                 <img src="../../../assets/cancelCircle.svg" class="task-icons" (click)="onDelete(task.id)" alt="Delete">
-                <img src="../../../assets/buildCirlcle.svg" class="task-icons" (click)="onClick(task)" alt="Edit">
+                <img src="../../../assets/buildCirlcle.svg" class="task-icons" (click)="onEdit(task)" alt="Edit">
               </div>
               <div
                 class="state"

@@ -26,18 +26,24 @@ export class MainModalComponent implements OnInit {
     let task = JSON.stringify(this.data.task);
     let state = JSON.stringify(this.data.state);
     try{
-      let desc = JSON.parse(task)['description'];
-      let title = JSON.parse(task)['title'];
-      let id = JSON.parse(task)['id'];
-      let stateSelected = JSON.parse(task)['state'];
-      let idState = JSON.parse(task)['state']['id'];
-      let nameState = JSON.parse(task)['state']['name'];
-      this.desc = desc;
-      this.title = title;
-      this.id = id;
-      this.stateSelected = stateSelected;
-      this.idState = idState;
-      this.nameState = nameState;
+
+      if(this.data.tipo == 'task'){
+        let desc = JSON.parse(task)['description'];
+        let title = JSON.parse(task)['title'];
+        let id = JSON.parse(task)['id'];
+        let stateSelected = JSON.parse(task)['state'];
+        let idState = JSON.parse(task)['state']['id'];
+        let nameState = JSON.parse(task)['state']['name'];
+
+
+        this.desc = desc;
+        this.title = title;
+        this.id = id;
+        this.stateSelected = stateSelected;
+        this.idState = idState;
+        this.nameState = nameState;
+      }
+
       this.titleTask = '';
       this.descTask = '';
       this.state = JSON.parse(state);
@@ -65,7 +71,7 @@ export class MainModalComponent implements OnInit {
     this.descTask = desc;
   }
 
-  onClick(num: number){
+  onClick(){
     console.log('-------- Datos a enviar -------');
     console.log('Id '+this.id);
     let e = JSON.stringify(this.stateTask)
