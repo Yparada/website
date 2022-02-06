@@ -17,7 +17,6 @@ export class TextAreaComponent implements OnInit {
   }
 
   onChange(){
-    console.log('Valor textArea '+this.inputValue);
     this.outputValue.emit(this.inputValue);
   }
 

@@ -29,7 +29,7 @@ export class IssuesComponent implements OnInit {
     })
   }
 
-  onClick(elemento: any){
+  onEdit(elemento: any){
     if(this.StateList.length == 0){
       this.mainModalService.loading();
       this.stateService.getAllState().subscribe(resp => {
@@ -53,7 +53,25 @@ export class IssuesComponent implements OnInit {
     });
     this.datos = [];
     this.loanTaskList();
-    // location.reload();
+  }
+
+  onCreate(){
+    if(this.StateList.length == 0){
+      this.mainModalService.loading();
+      this.stateService.getAllState().subscribe(resp => {
+        this.StateList = resp;
+        this.mainModalService.closeAll();
+        let a = JSON.stringify(this.StateList);
+        this.mainModalService.createTask(this.StateList)
+      },
+      error => {
+        this.mainModalService.closeAll();
+      }
+      )
+    }
+    else{
+      this.mainModalService.createTask(this.StateList);
+    }
 
   }
 

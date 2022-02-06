@@ -17,8 +17,6 @@ export class InputComponent implements OnInit {
   }
 
   onChange(){
-    console.log('Cambio el valor del input');
-    console.log(this.inputValue);
     this.outputValue.emit(this.inputValue);
   }
 

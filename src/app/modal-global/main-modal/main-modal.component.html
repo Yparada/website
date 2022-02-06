@@ -27,7 +27,28 @@
     <app-text-area [placeholdertext]="'Description'" [inputValue]=desc (outputValue)="descSelect($event)"></app-text-area>
     <div class="modify-box-button">
       <div class="modify-button">
-        <app-button-primary [text]="'Modify'" (click)="onClick($event)"></app-button-primary> 
+        <app-button-primary [text]="'Modify'" (click)="onClick()"></app-button-primary>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="data.tipo == 'newTask'">
+  <div class="task-container">
+    <div class="title">Create task</div>
+    <!-- <div class="task-id">Identifier: {{id}}</div> -->
+    <div class="sub-title">State</div>
+    <div class="state-list">
+      <app-drop-down-list [placeholdertext]="'Selecionar'" [list]="state"
+      (itemSelected)="itemSelect($event)"></app-drop-down-list>
+    </div>
+    <div class="sub-title">Title</div>
+    <app-input [placeholdertext]="'Title'" (outputValue)="titleSelect($event)"></app-input>
+    <div class="sub-title">Description</div>
+    <app-text-area [placeholdertext]="'Description'" (outputValue)="descSelect($event)"></app-text-area>
+    <div class="modify-box-button">
+      <div class="modify-button">
+        <app-button-primary [text]="'Modify'" (click)="onClick()"></app-button-primary>
       </div>
     </div>
   </div>

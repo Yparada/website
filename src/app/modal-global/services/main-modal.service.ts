@@ -4,7 +4,7 @@ import { MainModalComponent } from '../main-modal/main-modal.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface DialogData {
-  tipo: 'loading' | 'task',
+  tipo: 'loading' | 'task' | 'newTask',
   task: '',
   state: '',
 }
@@ -32,6 +32,15 @@ export class MainModalService {
         data: {
           tipo: 'task',
           task: item,
+          state: states
+        }
+      })
+    }
+
+    createTask(states: any){
+      this.dialog.open(MainModalComponent, {
+        data: {
+          tipo: 'newTask',
           state: states
         }
       })
