@@ -77,13 +77,14 @@ export class MainModalComponent implements OnInit {
     this.descTask = desc;
   }
 
-  onClick(){
+  onEdit(){
+    this.newTask.id = this.id;
     this.newTask.description = this.descTask;
     this.newTask.title = this.titleTask;
     this.newTask.state = this.stateTask;
     this.taskService.createTask(this.newTask).subscribe(resp => {
       let a = JSON.stringify(resp);
-      console.log('Crear respuesta ')+resp;
+      location.reload();
     },
     error => {
       console.log('Error '+error.message);
@@ -95,11 +96,8 @@ export class MainModalComponent implements OnInit {
     this.newTask.description = this.descTask;
     this.newTask.title = this.titleTask;
     let a = JSON.stringify(this.stateTask)
-    console.log('Valor que está incertando '+a);
     this.newTask.state = this.stateTask;
     this.taskService.createTask(this.newTask).subscribe(resp => {
-      let a = JSON.stringify(resp);
-      console.log('Crear respuesta ')+resp;
       location.reload();
     },
     error => {
