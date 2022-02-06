@@ -27,7 +27,7 @@
     <app-text-area [placeholdertext]="'Description'" [inputValue]=desc (outputValue)="descSelect($event)"></app-text-area>
     <div class="modify-box-button">
       <div class="modify-button">
-        <app-button-primary [text]="'Modify'" (click)="onClick()"></app-button-primary>
+        <app-button-primary [text]="'Modify'" (click)="onEdit()"></app-button-primary>
       </div>
     </div>
   </div>
@@ -36,7 +36,6 @@
 <div *ngIf="data.tipo == 'newTask'">
   <div class="task-container">
     <div class="title">Create task</div>
-    <!-- <div class="task-id">Identifier: {{id}}</div> -->
     <div class="sub-title">State</div>
     <div class="state-list">
       <app-drop-down-list [placeholdertext]="'Selecionar'" [list]="state"

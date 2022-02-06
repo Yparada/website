@@ -25,4 +25,8 @@ export class TaskService {
     return this.httpClient.post(this.API_SERVER + '/task/createTask', task);
   }
 
+  public editTask(task: Task): Observable<any>{
+    return this.httpClient.put(this.API_SERVER + '/task/updateTask', task);
+  }
+
 }
