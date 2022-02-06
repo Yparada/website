@@ -52,7 +52,9 @@ export class IssuesComponent implements OnInit {
     this.taskService.deleteTask(id).subscribe( resp => {
     });
     this.datos = [];
-    this.loanTaskList();
+    setTimeout( () => {
+      this.loanTaskList();
+    }, 1000);
   }
 
   onCreate(){

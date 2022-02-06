@@ -1,5 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Task } from 'src/app/model/task';
+import { TaskService } from 'src/app/services/task.service';
 import { DialogData } from '../services/main-modal.service';
 
 @Component({
@@ -9,7 +11,9 @@ import { DialogData } from '../services/main-modal.service';
 })
 export class MainModalComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    private taskService: TaskService) { }
 
   id: number;
   title: string;
@@ -21,6 +25,7 @@ export class MainModalComponent implements OnInit {
   idState: number;
   nameState: string;
   stateTask: any;
+  newTask: Task;
 
   ngOnInit(): void {
     let task = JSON.stringify(this.data.task);
@@ -47,6 +52,7 @@ export class MainModalComponent implements OnInit {
       this.titleTask = '';
       this.descTask = '';
       this.state = JSON.parse(state);
+      this.newTask = new Task;
 
     }
     catch{
@@ -72,12 +78,34 @@ export class MainModalComponent implements OnInit {
   }
 
   onClick(){
-    console.log('-------- Datos a enviar -------');
-    console.log('Id '+this.id);
-    let e = JSON.stringify(this.stateTask)
-    console.log('State '+e);
-    console.log('Title '+this.titleTask);
-    console.log('Desc '+this.descTask);
+    this.newTask.description = this.descTask;
+    this.newTask.title = this.titleTask;
+    this.newTask.state = this.stateTask;
+    this.taskService.createTask(this.newTask).subscribe(resp => {
+      let a = JSON.stringify(resp);
+      console.log('Crear respuesta ')+resp;
+    },
+    error => {
+      console.log('Error '+error.message);
+    });
+
+  }
+
+  onCreateTask(){
+    this.newTask.description = this.descTask;
+    this.newTask.title = this.titleTask;
+    let a = JSON.stringify(this.stateTask)
+    console.log('Valor que está incertando '+a);
+    this.newTask.state = this.stateTask;
+    this.taskService.createTask(this.newTask).subscribe(resp => {
+      let a = JSON.stringify(resp);
+      console.log('Crear respuesta ')+resp;
+      location.reload();
+    },
+    error => {
+      console.log('Error '+error.message);
+    });
+
   }
 
 }
