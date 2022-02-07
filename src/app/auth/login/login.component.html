@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="text-center" *ngIf="isLogged; else loggedOut">
   <h2>You are login</h2>
 </div>
@@ -5,40 +6,33 @@
 <ng-template #loggedOut>
   <div class="container">
     <div class="left">
-      <img src="../../../assets/ilustrationLogin.jpg" alt="Ilustration" />
-    </div>
-    <div class="right">
-      <div class="title-container">
-        <div class="title">LOGIN USER</div>
-        <div class="message">Welcome back to Ytarama</div>
+      <div class="left-container">
+        <div class="welcome-text">Welcome Back</div>
+        <img src="../../../assets/sign_in.svg" alt="Ilustration" class="welcome-img"/>
       </div>
-      <form #f="ngForm" (ngSubmit)="f.valid && onLogin()" novalidate>
-        <div class="fields">
-          <input
-            type="text"
-            name="nombreUsuario"
-            id="nombreUsuario"
-            placeholder="nombreUsuario"
-            class="input-component"
-            [(ngModel)]="nombreUsuario"
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            class="input-component"
-            [(ngModel)]="password"
-            required
-          />
+    </div>
+
+    <div class="right">
+      <div class="right-container">
+        <div class="title-container">
+          <div class="title">Sign in</div>
+          <div class="message">to YTarama</div>
+          <div class="message-mb">Welcome Back To YTarama</div>
         </div>
-        <div class="button-container">
-          <button class="button-component" [disabled]="!f.valid">
-            <div class="text-button">LOGIN</div>
-          </button>
+        <div class="fiedls-container">
+          <app-input [placeholdertext]="'Username'" (outputValue)="onOutputUser($event)"></app-input>
+          <div class="password-field">
+            <app-input [placeholdertext]="'Password'" (outputValue)="onOutputPassword($event)"></app-input>
+          </div>
+          <div class="login-button-container">
+            <div class="login-button">
+              <app-button-success [text]="'Sign in'" (click)="onLogin()"></app-button-success>
+            </div>
+          </div>
+
+
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </ng-template>

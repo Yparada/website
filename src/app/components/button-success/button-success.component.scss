@@ -1,0 +1,27 @@
+.button-success{
+  width: 100%;
+  background: #4DC37D;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  border: 3px solid transparent;
+  cursor: pointer;
+
+  &:active{
+    border: 3px solid #5BE995;
+  }
+
+  &:hover{
+    background: #43AB6D;
+  }
+
+  .tex{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    padding: 7px;
+  }
+}

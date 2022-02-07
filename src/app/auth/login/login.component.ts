@@ -60,4 +60,12 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  onOutputUser(user: string){
+    this.nombreUsuario = user;
+  }
+
+  onOutputPassword(password: string){
+    this.password = password;
+  }
+
 }

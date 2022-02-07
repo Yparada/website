@@ -23,6 +23,7 @@ import { InputComponent } from './components/input/input.component';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 import { DropDownListComponent } from './components/drop-down-list/drop-down-list.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
+import { ButtonSuccessComponent } from './components/button-success/button-success.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ButtonPrimaryComponent } from './components/button-primary/button-prima
     InputComponent,
     TextAreaComponent,
     DropDownListComponent,
-    ButtonPrimaryComponent
+    ButtonPrimaryComponent,
+    ButtonSuccessComponent
   ],
   imports: [
     BrowserModule,
