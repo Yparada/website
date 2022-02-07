@@ -20,13 +20,13 @@
           <div class="message-mb">Welcome Back To YTarama</div>
         </div>
         <div class="fiedls-container">
-          <app-input [placeholdertext]="'Username'"></app-input>
+          <app-input [placeholdertext]="'Username'" (outputValue)="onOutputUser($event)"></app-input>
           <div class="password-field">
-            <app-input [placeholdertext]="'Password'"></app-input>
+            <app-input [placeholdertext]="'Password'" (outputValue)="onOutputPassword($event)"></app-input>
           </div>
           <div class="login-button-container">
             <div class="login-button">
-              <app-button-success [text]="'Sign in'"></app-button-success>
+              <app-button-success [text]="'Sign in'" (click)="onLogin()"></app-button-success>
             </div>
           </div>
 
