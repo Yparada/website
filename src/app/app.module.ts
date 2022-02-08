@@ -25,6 +25,7 @@ import { DropDownListComponent } from './components/drop-down-list/drop-down-lis
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 import { ButtonSuccessComponent } from './components/button-success/button-success.component';
 import { InputPasswordComponent } from './components/input-password/input-password.component';
+import { SingUpComponent } from './auth/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { InputPasswordComponent } from './components/input-password/input-passwo
     DropDownListComponent,
     ButtonPrimaryComponent,
     ButtonSuccessComponent,
-    InputPasswordComponent
+    InputPasswordComponent,
+    SingUpComponent
   ],
   imports: [
     BrowserModule,

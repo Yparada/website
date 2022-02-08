@@ -1,0 +1,155 @@
+.container{
+  display: flex;
+
+  .left{
+    width: 50%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-left: transparent;
+
+    .left-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 191px 20px 191px 20px;
+
+      .welcome-text{
+        font-family: Roboto-medium;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+
+        color: #000000;
+      }
+
+      .welcome-img{
+        margin-top: 14px;
+        max-width: 500px;
+
+      }
+    }
+  }
+
+  .right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+
+    .right-container{
+      margin: 244px 20px 0 20px;
+
+      .title-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .title{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 48px;
+          line-height: 56px;
+          text-align: center;
+          color: #000000;
+
+        }
+        .message{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          text-align: center;
+          color: #000000;
+        }
+
+        .message-mb{
+          display: none;
+        }
+      }
+
+      .fiedls-container{
+        margin-top: 21px;
+        min-width: 336px;
+
+        .field-box{
+          margin-top: 19px;
+        }
+        .login-button-container{
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+          .login-button{
+            margin-top: 20px;
+            min-width: 199px;
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+}
+
+@media (max-width: 1040px){
+  .left{
+    min-width: 540px;
+  }
+}
+
+@media (max-width: 920px){
+  .container{
+    .left{
+      display: none;
+    }
+
+    .right{
+      width: 100%;
+      border: 0;
+
+      .right-container{
+        margin-top: 100px;
+
+        .title-container{
+          .message{
+            display: none;
+          }
+
+          .message-mb{
+            display: block;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            color: #000000;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 380px){
+  .container{
+    .right{
+      .right-container{
+        width: calc(100% - 30px);
+        margin-right: 15px;
+        margin-left: 15px;
+
+        .fiedls-container{
+          min-width: 200px;
+        }
+
+      }
+    }
+  }
+}

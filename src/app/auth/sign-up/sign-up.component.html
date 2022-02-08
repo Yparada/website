@@ -1,0 +1,40 @@
+  <app-navbar></app-navbar>
+  <div class="container">
+
+    <div class="right">
+      <div class="right-container">
+        <div class="title-container">
+          <div class="title">Sign up</div>
+          <div class="message">to YTarama</div>
+          <div class="message-mb">Welcome Back To YTarama</div>
+        </div>
+        <div class="fiedls-container">
+          <app-input [placeholdertext]="'name'" (outputValue)="onOutputName($event)" id="name"></app-input>
+          <div class="field-box">
+            <app-input [placeholdertext]="'Username'" (outputValue)="onOutputUser($event)" id="username"></app-input>
+          </div>
+          <div class="field-box">
+            <app-input [placeholdertext]="'email'" (outputValue)="onOutputEmail($event)" id="email"></app-input>
+          </div>
+          <div class="field-box">
+            <app-input-password [placeholdertext]="'Password'" (outputValue)="onOutputPassword($event)" id="password"></app-input-password>
+          </div>
+          <div class="login-button-container">
+            <div class="login-button">
+              <app-button-success [text]="'Sign up'" (click)="onRegister()"></app-button-success>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="left">
+      <div class="left-container">
+        <div class="welcome-text">Welcome</div>
+        <img src="../../../assets/signUp.svg" alt="Ilustration" class="welcome-img"/>
+      </div>
+    </div>
+  </div>
+
