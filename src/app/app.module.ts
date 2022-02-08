@@ -24,6 +24,7 @@ import { TextAreaComponent } from './components/text-area/text-area.component';
 import { DropDownListComponent } from './components/drop-down-list/drop-down-list.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 import { ButtonSuccessComponent } from './components/button-success/button-success.component';
+import { InputPasswordComponent } from './components/input-password/input-password.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ButtonSuccessComponent } from './components/button-success/button-succe
     TextAreaComponent,
     DropDownListComponent,
     ButtonPrimaryComponent,
-    ButtonSuccessComponent
+    ButtonSuccessComponent,
+    InputPasswordComponent
   ],
   imports: [
     BrowserModule,
