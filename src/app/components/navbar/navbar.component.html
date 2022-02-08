@@ -10,7 +10,10 @@
       <a class="vinculo" title="Mail" (click)="goLink('https://mail.ytarama.com')" ><img src="../../../assets/mail.svg"
           alt="GitHub" class="iconNav iconNavMail"> <div class="imgTitle"></div></a>
 
-      <a class="vinculo" *ngIf="!isLogged && !isLoginPage" title="Login" routerLink="login" ><img src="../../../assets/login.svg"
+      <a class="vinculo" title="Sign Up" (click)="onNavigate('/sign-up')"><img src="../../../assets/signUpColor.svg"
+          alt="GitHub" class="iconNav iconNavSignUp"> <div class="imgTitle"></div></a>
+
+      <a class="vinculo" *ngIf="!isLogged && !isLoginPage" title="Login" (click)="onNavigate('/login')" ><img src="../../../assets/login.svg"
           alt="GitHub" class="iconNav iconNavMail"> <div class="imgTitle"></div></a>
 
       <a class="vinculo" *ngIf="isLogged" title="logOut" (click)="onLogOut()"><img src="../../../assets/logOut.svg"

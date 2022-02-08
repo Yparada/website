@@ -46,4 +46,8 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  onNavigate(path: string){
+    this.router.navigate([path]);
+  }
+
 }
