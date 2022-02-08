@@ -10,17 +10,23 @@ import { TokenService } from 'src/app/services/token.service';
 export class NavbarComponent implements OnInit {
 
   isLogged = false;
+  isLoginPage: boolean;
 
   constructor(
     private router: Router,
     private tokenSevice: TokenService) { }
 
   ngOnInit(): void {
+    this.isLoginPage = false;
     if(this.tokenSevice.getToken()){
       this.isLogged = true;
     }
     else{
       this.isLogged = false;
+    }
+
+    if(this.router.url == '/login'){
+      this.isLoginPage = true;
     }
   }
 
