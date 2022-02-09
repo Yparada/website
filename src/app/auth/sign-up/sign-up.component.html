@@ -19,9 +19,14 @@
           <div class="field-box">
             <app-input-password [placeholdertext]="'Password'" (outputValue)="onOutputPassword($event)" id="password"></app-input-password>
           </div>
-          <div class="login-button-container">
+          <div class="login-button-container" *ngIf="isUserContent && isPasswordContent && isNameContent && isEmailContent">
             <div class="login-button">
               <app-button-success [text]="'Sign up'" (click)="onRegister()"></app-button-success>
+            </div>
+          </div>
+          <div class="login-button-container" *ngIf="!isUserContent || !isPasswordContent || !isNameContent || !isEmailContent">
+            <div class="login-button">
+              <app-button-success [text]="'Sign up'"></app-button-success>
             </div>
           </div>
 
