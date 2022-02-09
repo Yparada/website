@@ -22,6 +22,10 @@ export class SingUpComponent implements OnInit {
   email: string = '';
   errorMsj: string;
   isLogged = false;
+  isNameContent: boolean;
+  isUserContent: boolean;
+  isPasswordContent: boolean;
+  isEmailContent: boolean;
 
 
 
@@ -32,6 +36,10 @@ export class SingUpComponent implements OnInit {
     private mainModalService: MainModalService) { }
 
   ngOnInit(): void {
+    this.isEmailContent = false;
+    this.isNameContent = false;
+    this.isUserContent = false;
+    this.isPasswordContent = false;
     if(this.tokenService.getToken()){
       this.isLogged = true;
     }
@@ -59,18 +67,42 @@ export class SingUpComponent implements OnInit {
   }
 
   onOutputUser(user: string){
+    if(user){
+      this.isUserContent = true;
+    }
+    else{
+      this.isUserContent = false;
+    }
     this.nombreUsuario = user;
   }
 
   onOutputPassword(password: string){
+    if(password){
+      this.isPasswordContent = true;
+    }
+    else{
+      this.isPasswordContent = false;
+    }
     this.password = password;
   }
 
   onOutputName(name: string){
+    if(name){
+      this.isNameContent = true;
+    }
+    else{
+      this.isNameContent = false;
+    }
     this.name = name;
   }
 
   onOutputEmail(email: string){
+    if(email){
+      this.isEmailContent = true;
+    }
+    else{
+      this.isEmailContent = false;
+    }
     this.email = email;
   }
 
