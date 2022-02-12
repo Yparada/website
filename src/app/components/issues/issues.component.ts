@@ -12,7 +12,6 @@ import { TokenService } from 'src/app/services/token.service';
 export class IssuesComponent implements OnInit {
   datos: any[] = [];
   StateList: any[] = [];
-  roles: string[];
   isAdmin = false;
 
   constructor(
@@ -25,12 +24,7 @@ export class IssuesComponent implements OnInit {
     this.mainModalService.loading();
     this.loanTaskList();
     this.mainModalService.closeAll();
-    this.roles = this.tokenService.gerAuthorities();
-    this.roles.forEach( rol => {
-      if(rol === 'ROLE_ADMIN'){
-        this.isAdmin = true;
-      }
-    })
+    this.isAdmin = this.tokenService.isAdmin();
   }
 
   loanTaskList(){

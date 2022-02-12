@@ -21,7 +21,6 @@ export class SingUpComponent implements OnInit {
   name: string = '';
   email: string = '';
   errorMsj: string;
-  isLogged = false;
   isNameContent: boolean;
   isUserContent: boolean;
   isPasswordContent: boolean;
@@ -40,9 +39,6 @@ export class SingUpComponent implements OnInit {
     this.isNameContent = false;
     this.isUserContent = false;
     this.isPasswordContent = false;
-    if(this.tokenService.getToken()){
-      this.isLogged = true;
-    }
   }
 
   onRegister(): void{
