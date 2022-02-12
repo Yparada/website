@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
 
   isLogged = false;
   isLoginPage: boolean;
+  isAdmin = false;
 
   constructor(
     private router: Router,
@@ -18,12 +19,8 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoginPage = false;
-    if(this.tokenSevice.getToken()){
-      this.isLogged = true;
-    }
-    else{
-      this.isLogged = false;
-    }
+    this.isLogged = this.tokenSevice.isLogged();
+    this.isAdmin = this.tokenSevice.isAdmin();
 
     if(this.router.url == '/login'){
       this.isLoginPage = true;
@@ -36,14 +33,6 @@ export class NavbarComponent implements OnInit {
 
   onLogOut(){
     this.tokenSevice.logOut();
-
-    if(this.router.url == '/dev'){
-      this.router.navigate(['/']);
-    }
-    else{
-      location.reload();
-    }
-
   }
 
   onNavigate(path: string){
