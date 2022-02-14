@@ -30,19 +30,21 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void{
-    this.mainModalService.loading();
-    this.loginUser = new LoginUsuario(this.nombreUsuario, this.password);
-    this.authService.login(this.loginUser).subscribe( data => {
-      this.tokenService.setToken(data.token);
-      this.mainModalService.closeAll();
-      this.router.navigate(['/dev']);
-    },
-    err => {
-      this.mainModalService.closeAll();
-      console.log(err);
-    }
+    if(this.nombreUsuario && this.password){
+      this.mainModalService.loading();
+      this.loginUser = new LoginUsuario(this.nombreUsuario, this.password);
+      this.authService.login(this.loginUser).subscribe( data => {
+        this.tokenService.setToken(data.token);
+        this.mainModalService.closeAll();
+        this.router.navigate(['/dev']);
+      },
+      err => {
+        this.mainModalService.closeAll();
+        console.log(err);
+      }
 
-    );
+      );
+    }
   }
 
   onOutputUser(user: string){
