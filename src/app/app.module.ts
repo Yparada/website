@@ -12,7 +12,6 @@ import { MainComponent } from './screens/main/main.component';
 import { IssuesComponent } from './components/issues/issues.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
-import { RegistryComponent } from './auth/registry/registry.component';
 import { FormsModule } from '@angular/forms';
 import { DevComponent } from './screens/dev/dev.component';
 import { interceptorProvider } from './interceptors/task-interceptor.service';
@@ -37,7 +36,6 @@ import { SingUpComponent } from './auth/sign-up/sign-up.component';
     MainComponent,
     IssuesComponent,
     LoginComponent,
-    RegistryComponent,
     DevComponent,
     MainModalComponent,
     InputComponent,
